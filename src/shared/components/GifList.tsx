@@ -1,23 +1,20 @@
-import { mockGifs } from "../../mock-data/gifs.mock";
+import type { FC } from "react";
+import type { Gif } from "../../mock-data/gifs.mock";
 
 interface Props {
-    id: string;
-    title: string;
-    url: string;
-    width: number;
-    height: number;
+    gifs: Gif[];
 }
 
-export const GifList = () => {
+export const GifList: FC<Props> = ({ gifs }) => {
     return (
         <div className="gifs-container">
             {
-                mockGifs.map(({ id, title, url, width, height }: Props) => (
-                    <div key={id} className="gif-card" >
-                        <img src={url} alt={title} />
-                        <h3>{title}</h3>
+                gifs.map((gif) => (
+                    <div key={gif.id} className="gif-card" >
+                        <img src={gif.url} alt={gif.title} />
+                        <h3>{gif.title}</h3>
                         <p>
-                            {width}x{height} (1.5mb)
+                            {gif.width}x{gif.height} (1.5mb)
                         </p>
                     </div>
                 ))
