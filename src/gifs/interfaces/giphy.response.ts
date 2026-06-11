@@ -97,18 +97,11 @@ export interface FixedHeight {
 export interface Looping {
 }
 
-export enum Rating {
-    G = "g",
-    PG = "pg",
-}
+export type Rating = 'G' | 'PG';
 
-export enum TrendingDatetimeEnum {
-    The00000000000000 = "0000-00-00 00:00:00",
-}
+export type TrendingDatetimeEnum = "0000-00-00 00:00:00";
 
-export enum Type {
-    GIF = "gif",
-}
+export type Type = 'gif';
 
 export interface User {
     avatar_url:    string;
